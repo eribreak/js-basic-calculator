@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Calculator</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body>
+
+        <script>
+            function calMachine(pt) {
+                var st1 = parseFloat(document.frm.num1.value);
+                var st2 = parseFloat(document.frm.num2.value);
+                var kq = document.frm.result.value;
+
+                if (pt == "+") {
+                    kq = st1 + st2;
+                }
+                else if (pt == "-") {
+                    kq = st1 - st2;
+                }
+                else if (pt == "x") {
+                    kq = st1 * st2;
+                }
+                else if (pt == "/") {
+                    kq = st1 / st2;
+                }
+                else if (pt == "Sqrt") {
+                    kq = Math.sqrt(kq);
+                }
+                else if (pt == "Abs") {
+                    kq = Math.abs(kq);
+                }
+                else if (pt == "Ceil") {
+                    kq = Math.ceil(kq);
+                }
+                document.frm.result.value = kq;
+            }
+        </script>
+
+        <form name="frm" method="post">
+            <table border="1" cellspacing="1" cellpadding="1">
+                <tr>
+                    <td id="menu" colspan="2">SIMPLE COMPUTER APPLICATION</td>
+                </tr>
+                <tr>
+                    <td class="left">First Number</td>
+                    <td><input type="text" name="num1" /></td>
+                </tr>
+                <tr>
+                    <td class="left">Second Number</td>
+                    <td><input type="text" name="num2" /></td>
+                </tr>
+                <tr>
+                    <td class="left">Select Math Operations</td>
+                    <td align="center">
+                        <input type="button" value="+" onclick="calMachine(this.value)" />
+                        <input type="button" value="-" onclick="calMachine(this.value)" />
+                        <input type="button" value="x" onclick="calMachine(this.value)" />
+                        <input type="button" value="/" onclick="calMachine(this.value)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">Other Math Operations</td>
+                    <td align="center">
+                        <input type="button" value="Sqrt" onclick="calMachine(this.value)" />
+                        <input type="button" value="Abs" onclick="calMachine(this.value)" />
+                        <input type="button" value="Ceil" onclick="calMachine(this.value)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">Result</td>
+                    <td><input type="text" name="result" /></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+
+</html>
